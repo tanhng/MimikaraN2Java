@@ -30,9 +30,9 @@ public class readfile {
 	public void openFile(int dainanka) {
 		try {
 			System.out.println("bai "+dainanka);
-			String a=String.format("F:\\oolt\\MimiJava\\src\\bai%dyomi.txt", dainanka);
+			String a=String.format("F:\\MimikaraN2Java\\MimiJava\\src\\bai%dyomi.txt", dainanka);
 			System.out.println(a);
-			String b=String.format("F:\\oolt\\MimiJava\\src\\bai%dimi.txt", dainanka);
+			String b=String.format("F:\\MimikaraN2Java\\MimiJava\\src\\bai%dimi.txt", dainanka);
 			x=new Scanner(new File(a) );
 			y=new Scanner(new File(b));
 		}
