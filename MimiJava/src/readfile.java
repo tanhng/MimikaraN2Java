@@ -5,7 +5,7 @@ import java.util.*;
 //import java.util.List;
 public class readfile {
 	private Scanner x;
-	
+	private Scanner y;
     public static word[] addX(int n, word arr[], String x) 
     { 
         word newarr[] = new word[n + 1]; 
@@ -17,11 +17,24 @@ public class readfile {
     } 
 	
    
+    public static void addY(int n, word arr[], String x) 
+    { 
+//        int i;
+//        for(i=0;i<n;i++) {
+//        	arr[i].setImi(x);
+//        }
+//        return arr;
+    	arr[n].setImi(x);
+    } 
     
-    
-	public void openFile() {
+	public void openFile(int dainanka) {
 		try {
-			x=new Scanner(new File("F:\\oolt\\MimiJava\\src\\bai1yomi.txt"));
+			System.out.println("bai "+dainanka);
+			String a=String.format("F:\\oolt\\MimiJava\\src\\bai%dyomi.txt", dainanka);
+			System.out.println(a);
+			String b=String.format("F:\\oolt\\MimiJava\\src\\bai%dimi.txt", dainanka);
+			x=new Scanner(new File(a) );
+			y=new Scanner(new File(b));
 		}
 		catch(Exception e) {
 			System.out.println("Can not read file");
@@ -32,10 +45,16 @@ public class readfile {
 		while(x.hasNext()) {
 			list=addX(list.length,list,x.next());
 		}
-		int i;
-		for (i=0;i<list.length;i++) {
-			System.out.println("hey "+list[i].getYomikata());
+		int count=0;
+		while(y.hasNext()) {
+			addY(count,list,y.nextLine());
+			count++;
 		}
+//		int i;
+//		for (i=0;i<list.length;i++) {
+//			System.out.println("hey "+list[i].getYomikata()+" "+list[i].getImi());
+//			
+//		}
 		return list;
 	}
 	
